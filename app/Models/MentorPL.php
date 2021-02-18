@@ -13,9 +13,21 @@ class MentorPL extends Model
     protected $primaryKey = 'RKD01_Nomatrik';
     public $incrementing = false;
 
-    public function mentor()
+    // public function mentor()
+    // {
+    //     return $this->belongsTo('App\Models\Mentor', 'NoStaf','NoStaf');
+    //     // note: we can also inlcude Mobile model like: 'App\Mobile'
+    // }
+
+    // public function student()
+    // {
+    //     return $this->belongsTo(Student::class, 'RKD01_Nomatrik', 'RKD01_Nomatrik');
+    //     // note: we can also inlcude Mobile model like: 'App\Mobile'
+    // }
+
+    public function students()
     {
-        return $this->belongsTo('App\Models\Staff', 'NoStaf');
+        return $this->hasMany(Student::class, 'RKD01_Nomatrik', 'RKD01_Nomatrik');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 
