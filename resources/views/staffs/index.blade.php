@@ -16,9 +16,9 @@
                 <table class="table">
                 <thead>
                  <tr>
-                 <th> No Staff </th>
-                 <th> Nama</th>
-                 <th> Jawatan </th>
+                 <th> STAFF NO </th>
+                 <th> NAME</th>
+                 <th> DESIGNATION </th>
                 
                  
                  </tr>
@@ -30,7 +30,7 @@
                    <tr>
                    <td>{{ $staff->NoStaf}}</td>
                    <td>{{ $staff->Nama}}</td>
-                   <td>{{ $staff->Jawatan}}</td>
+                   <td>{{ $staff->designation->JwtDesc}}</td>
                    
 
             

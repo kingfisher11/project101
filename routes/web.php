@@ -18,7 +18,7 @@ use App\Http\Controllers\MentorPLController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'])->name('location:list');
 Route::get('/mentor', [App\Http\Controllers\MentorController::class, 'index'])->name('mentor:list');
@@ -29,6 +29,6 @@ Route::get('/test/{NoStaf}', [MentorController::class, 'getStudent']);
 // Route::get('/lokasi/create',[App\Http\Controllers\LokasiController::class, 'create'])->name('lokasi:create');
 // Route::post('/lokasi/create',[App\Http\Controllers\LokasiController::class, 'store'])->name('lokasi:store');
 
-Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

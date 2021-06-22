@@ -17,19 +17,19 @@ class Mentor extends Model
 
     public function staff()
     {
-        return $this->belongsTo('App\Models\Staff', 'NoStaf');
+        return $this->belongsTo(Staff::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 // relation with table mentee
     public function getStudent()
     {
-        return $this->hasMany('App\Models\MentorPL', 'NoStaf');
+        return $this->hasMany(MentorPL::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 
     public function student()
     {
-        return $this->hasManyThrough('App\Models\Student', 'App\Models\MentorPL','RKD01_Nomatrik','RKD01_Nomatrik');
+        return $this->hasManyThrough(Student::class, 'App\Models\MentorPL','RKD01_Nomatrik','RKD01_Nomatrik');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 

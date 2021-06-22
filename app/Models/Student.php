@@ -21,7 +21,7 @@ class Student extends Model
     // relationship with table mentor - 1 mentor belongs to many mentee
     public function mentor()
     {
-        return $this->belongsTo('App\Models\Mentor');
+        return $this->belongsTo(Mentor::class);
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 

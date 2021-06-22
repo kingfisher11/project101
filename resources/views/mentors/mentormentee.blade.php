@@ -18,46 +18,44 @@
                 </div>
                 <div class="col-md-4 col-xs-12 col-sm-5 col-lg-8">
                     <div class="container"  >
-                        <h2>{{ $mentor->staff->Nama}} </h2>
+                        <h2>{{ $staffs->Nama}} </h2>
+                        </div>
+                            <hr>
+
+                            STAFF NO: {{$staffs->NoStaf}}</br>
+                            DESIGNATION: {{$staffs->designation->JwtDesc}} </br>
+                            BRANCH: {{$staffs->CawKod}}
+                        </div>
                     </div>
-                        <hr>
-
-                        {{$mentor->staff->NoStaf}}</br>
-                        {{$mentor->staff->Jawatan}}
-                        <p>{{$mentor->staff->CawKod}}</p>
-
-
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header">{{ __('List of ') }} {{ $mentor->staff->Nama}} Mentees</div>
+                <div class="card-header">{{ __('List of ') }} {{ $staffs->Nama}} Mentees</div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th> No Matrik </th>
-                                    <th> Nama </th>
+                                    <th> Mentee Name </th>
                                     <th> Program</th>
-                                    <th> Cawangan </th> 
+
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach ($mentor->getStudent as $value)
-                                @foreach ($value ->students as $stud)
+                            @foreach ($mentors as $getStudent)
+                               
                                 <tr>
-                                    <td>{{ $stud ->RKD01_Nomatrik }}</td> 
-                                    <td>{{ $stud ->RKD01_Nama}}</td>
-                                    <td>{{ $stud ->RKD01_Program }}</td>
-                                    <td>{{ $stud ->RKD01_Caw }}</td> 
+                                    <td>{{ $getStudent ->RKD01_Nomatrik }}</td> 
+                                    <td>{{ $getStudent ->RKD01_Nama}}</td>
+                                    <td>{{ $getStudent ->RKD01_Program }}</td>
                                 </tr>
-                                @endforeach
+
                             @endforeach
                             </tbody>
                         </table>
-                        {{-- <div style="text-align: center">
-                            {{ $mentor->links("vendor.pagination.bootstrap-4") }}
-                        </div> --}}
+                        {{ $mentors->links() }}
+
                     </div>
                 </div>
                 
