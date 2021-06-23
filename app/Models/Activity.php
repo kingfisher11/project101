@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
     protected $fillable = [
         'staffno',
         'session',
@@ -18,7 +19,7 @@ class Activity extends Model
 
     public function mentor()
     {
-        return $this->belongsTo(Mentor::class, 'staffno');
+        return $this->hasMany(Mentor::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 

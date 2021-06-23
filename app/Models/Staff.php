@@ -17,13 +17,19 @@ class Staff extends Model
 
     public function mentor()
     {
-        return $this->hasOne(Mentor::class, 'NoStaf');
+        return $this->belongsTo(Mentor::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 
     public function designation()
     {
         return $this->belongsTo(Designation::class, 'Jawatan');
+        // note: we can also inlcude Mobile model like: 'App\Mobile'
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 

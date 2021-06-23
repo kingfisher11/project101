@@ -17,7 +17,7 @@ class Mentor extends Model
 
     public function staff()
     {
-        return $this->belongsTo(Staff::class, 'NoStaf');
+        return $this->hasOne(Staff::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 // relation with table mentee
@@ -29,15 +29,9 @@ class Mentor extends Model
 
     public function activities()
     {
-        return $this->hasMany(Activity::class, 'NoStaf');
+        return $this->belongsTo(Activity::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
-
-    // public function student()
-    // {
-    //     return $this->hasManyThrough(Student::class, 'App\Models\MentorPL','RKD01_Nomatrik','RKD01_Nomatrik');
-    //     // note: we can also inlcude Mobile model like: 'App\Mobile'
-    // }
 
 
 }
