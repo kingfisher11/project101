@@ -8,8 +8,12 @@
              {{session()->get('alert')}}
             </div>
         @endif
+        <div class="input-group-prepend">
+                                <a href="" class="btn btn-primary mb-1"><i class="fa fa-plus-circle"></i> Add New Activity</a>
+        </div>
+        <br>
             <div class="card">
-                <div class="card-header">{{ __('Mentor Index') }}</div>
+                <div class="card-header">{{ __('Mentor Mentee Activity Index') }}</div>
 
                 <div class="card-body">
 
@@ -18,9 +22,10 @@
                  <tr>
                  <th> No </th>
                  <th> No Staff </th>
-                 <th> Nama </th>
-                 <th> Keaktifan</th>
-                 <th> Kuota </th>
+                 <th> Session </th>
+                 <th> Description</th>
+                 <th> Date </th>
+                 <th> Hours </th>
                 
                  
                  </tr>
@@ -28,16 +33,17 @@
                  
  
                  <tbody>
-                   @foreach($mentors as $no => $mentor)
+                   @foreach($activities as $no => $activity)
                    <tr>
                    <td>{{ ++$no }}</td> 
-                   <td>{{ $mentor->NoStaf}}</td>
+                   <td>{{ $activity->staffno}}</td>
                    <td>
-                    {{ $mentor->staff['Nama']}} 
+                    {{ $activity->session}} 
                     <!-- calling Name from relationship Staff Mentor -->
                     </td>
-                   <td>{{ $mentor->Keaktifan}}</td>
-                   <td>{{ $mentor->Kuota}}</td>
+                   <td>{{ $activity->desc}}</td>
+                   <td>{{ $activity->activitydate}}</td>
+                   <td>{{ $activity->hours}}</td>
                    
 
                   
@@ -46,7 +52,7 @@
                     @endforeach
                 </tbody>
                 </table>
-                {{$mentors->links()}}
+                {{$activities->links()}}
 
                 </div>
             </div>

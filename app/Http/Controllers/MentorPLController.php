@@ -63,20 +63,18 @@ class MentorPLController extends Controller
 
         //   $mentee = MentorPL::where('NoStaf',$nostaff)->get();
         //   $sesi = StudentSemester::where('KodSesi_Sem','0419')->get();
-          
+          $currentsession = '0720';
           
           $mentors = MentorPL::select('*')
           ->where('NoStaf', '=', $nostaff)
-          ->where('KodSesi_Sem', '=', '0419')
+          ->where('KodSesi_Sem', '=', $currentsession)
           ->get();
 
-          
-          
         // $student = Student::first();
         
         
         
-        //dd($mentor->students);
+        // dd($mentees);
         // $mentee = $mentor->getStudent;
         // [0]->students;
         // $mentor = \App\Models\Mentor::paginate();

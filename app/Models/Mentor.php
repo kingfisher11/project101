@@ -27,6 +27,12 @@ class Mentor extends Model
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 
+    public function activities()
+    {
+        return $this->hasMany(Activity::class, 'NoStaf');
+        // note: we can also inlcude Mobile model like: 'App\Mobile'
+    }
+
     // public function student()
     // {
     //     return $this->hasManyThrough(Student::class, 'App\Models\MentorPL','RKD01_Nomatrik','RKD01_Nomatrik');

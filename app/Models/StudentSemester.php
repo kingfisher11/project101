@@ -23,5 +23,11 @@ class StudentSemester extends Model
         return $this->hasMany(StatusPL::class, 'StatusPelajar');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'KodSesi_Sem');
+        // note: we can also inlcude Mobile model like: 'App\Mobile'
+    }
     
 }

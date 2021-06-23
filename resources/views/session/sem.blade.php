@@ -9,18 +9,17 @@
             </div>
         @endif
             <div class="card">
-                <div class="card-header">{{ __('Mentor Index') }}</div>
+                <div class="card-header">{{ __('Student Semester Index') }}</div>
 
                 <div class="card-body">
 
                 <table class="table">
                 <thead>
                  <tr>
-                 <th> No </th>
-                 <th> No Staff </th>
-                 <th> Nama </th>
-                 <th> Keaktifan</th>
-                 <th> Kuota </th>
+                 <th> NO </th>
+                 <th> NO MATRIX </th>
+                 <th> SESSION CODE</th>
+                 <th> SEMESTER </th>
                 
                  
                  </tr>
@@ -28,25 +27,21 @@
                  
  
                  <tbody>
-                   @foreach($mentors as $no => $mentor)
+                   @foreach($sems as $no => $sem)
                    <tr>
                    <td>{{ ++$no }}</td> 
-                   <td>{{ $mentor->NoStaf}}</td>
-                   <td>
-                    {{ $mentor->staff['Nama']}} 
-                    <!-- calling Name from relationship Staff Mentor -->
-                    </td>
-                   <td>{{ $mentor->Keaktifan}}</td>
-                   <td>{{ $mentor->Kuota}}</td>
+                   <td>{{ $sem->RKD01_Nomatrik}}</td>
+                   <td>{{ $sem->KodSesi_Sem}}</td>
+                   <td>{{ $sem->Semester}}</td>
+
                    
 
-                  
-                 
+            
                 </tr>
                     @endforeach
                 </tbody>
                 </table>
-                {{$mentors->links()}}
+                {{$sems->links()}}
 
                 </div>
             </div>

@@ -9,18 +9,18 @@
             </div>
         @endif
             <div class="card">
-                <div class="card-header">{{ __('Mentor Index') }}</div>
+                <div class="card-header">{{ __('Session Index') }}</div>
 
                 <div class="card-body">
 
                 <table class="table">
                 <thead>
                  <tr>
-                 <th> No </th>
-                 <th> No Staff </th>
-                 <th> Nama </th>
-                 <th> Keaktifan</th>
-                 <th> Kuota </th>
+                 <th> NO </th>
+                 <th> SESSION CODE </th>
+                 <th> DESCRIPTION</th>
+                 <th> START DATE </th>
+                 <th> END DATE </th>
                 
                  
                  </tr>
@@ -28,25 +28,21 @@
                  
  
                  <tbody>
-                   @foreach($mentors as $no => $mentor)
+                   @foreach($sessions as $no => $session)
                    <tr>
                    <td>{{ ++$no }}</td> 
-                   <td>{{ $mentor->NoStaf}}</td>
-                   <td>
-                    {{ $mentor->staff['Nama']}} 
-                    <!-- calling Name from relationship Staff Mentor -->
-                    </td>
-                   <td>{{ $mentor->Keaktifan}}</td>
-                   <td>{{ $mentor->Kuota}}</td>
+                   <td>{{ $session->KodSesi_Sem}}</td>
+                   <td>{{ $session->Keterangan}}</td>
+                   <td>{{ $session->TrkMula_Sem}}</td>
+                   <td>{{ $session->TrkMula_Sem}}</td>
                    
 
-                  
-                 
+            
                 </tr>
                     @endforeach
                 </tbody>
                 </table>
-                {{$mentors->links()}}
+                {{$sessions->links()}}
 
                 </div>
             </div>

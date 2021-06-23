@@ -37,7 +37,7 @@ class Student extends Model
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 
-    public function semPL()
+    public function studentsemester()
     {
         return $this->hasMany(StudentSemester::class, 'RKD01_Nomatrik');
         // note: we can also inlcude Mobile model like: 'App\Mobile'

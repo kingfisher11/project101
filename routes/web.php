@@ -24,8 +24,12 @@ Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'
 Route::get('/mentor', [App\Http\Controllers\MentorController::class, 'index'])->name('mentor:list');
 Route::get('/staff', [App\Http\Controllers\StaffController::class, 'index'])->name('staff:list');
 Route::get('/mentee', [App\Http\Controllers\StudentController::class, 'index'])->name('student:list');
-Route::get('/mentormentee/{NoStaf}', [App\Http\Controllers\MentorPLController::class, 'show'])->name('mentor:show');
+Route::get('/mentormentee/{NoStaf}', [App\Http\Controllers\MentorPLController::class, 'show'])->name('mentormentee');
 Route::get('/test/{NoStaf}', [MentorController::class, 'getStudent']);
+Route::get('/session', [App\Http\Controllers\SessionController::class, 'index'])->name('session');
+Route::get('/sem', [App\Http\Controllers\SemPLController::class, 'index'])->name('sem');
+Route::get('/activity', [App\Http\Controllers\ActivityController::class, 'index'])->name('activities');
+Route::get('/activity/create', [App\Http\Controllers\ActivityController::class, 'create'])->name('create');
 // Route::get('/lokasi/create',[App\Http\Controllers\LokasiController::class, 'create'])->name('lokasi:create');
 // Route::post('/lokasi/create',[App\Http\Controllers\LokasiController::class, 'store'])->name('lokasi:store');
 

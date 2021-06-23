@@ -11,32 +11,31 @@
 
         </div>
         <div class="container">    
-                
-            <div class="row">
-                <div class="col-md-2 col-xs-12 col-sm-5 col-lg-3">
-                    <img src="https://icon-library.net/images/profile-image-icon/profile-image-icon-5.jpg" alt="stack photo" class="img">
-                </div>
-                <div class="col-md-4 col-xs-12 col-sm-5 col-lg-8">
-                    <div class="container"  >
-                        <h2>{{ $staffs->Nama}} </h2>
-                        </div>
-                            <hr>
+            <div class="card">
+                <div class="card-header">Mentor Details</div>
+                        <div class="card-body">
+                            <div class="col-md-4 col-xs-12 col-sm-5 col-lg-8">
+                                <div class="container"  >
+                                    <h3>{{ $staffs->Nama}} </h3>
+                                </div>
+                                        <hr>
 
-                            STAFF NO: {{$staffs->NoStaf}}</br>
-                            DESIGNATION: {{$staffs->designation->JwtDesc}} </br>
-                            BRANCH: {{$staffs->CawKod}}
+                                        STAFF NO: {{$staffs->NoStaf}}</br>
+                                        DESIGNATION: {{$staffs->designation->JwtDesc}} </br>
+                                        BRANCH: {{$staffs->CawKod}}
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
-
+        </div>
+        <br>
             <div class="card">
-                <div class="card-header">{{ __('List of ') }} {{ $staffs->Nama}} Mentees</div>
+                <div class="card-header">{{ __('List of ') }} List of Active Mentees</div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table" id="datatable">
                             <thead>
                                 <tr>
-                                    <th> No </th>
+                                    <th> NO </th>
                                     <th> MATRIX NUMBER </th>
                                     <th> MENTEE NAME </th>
                                     <th> PROGRAM</th>
