@@ -15,7 +15,7 @@ class StaffController extends Controller
 
             // $mentor=Mentor::all();
             // $mentor=Mentor::paginate(5); //by default 15
-            $staffs = \App\Models\Staff::paginate();
+            $staffs = Staff::paginate();
            // dd($trainings);  //cara debug dump & die
            return view('staffs.index', compact('staffs'));
            //recources/views/cars/index.blade.php

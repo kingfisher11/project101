@@ -21,17 +21,17 @@ class Mentor extends Model
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 // relation with table mentee
-    public function getStudent()
+    public function mentorPL()
     {
         return $this->hasMany(MentorPL::class, 'NoStaf');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 
-    public function student()
-    {
-        return $this->hasManyThrough(Student::class, 'App\Models\MentorPL','RKD01_Nomatrik','RKD01_Nomatrik');
-        // note: we can also inlcude Mobile model like: 'App\Mobile'
-    }
+    // public function student()
+    // {
+    //     return $this->hasManyThrough(Student::class, 'App\Models\MentorPL','RKD01_Nomatrik','RKD01_Nomatrik');
+    //     // note: we can also inlcude Mobile model like: 'App\Mobile'
+    // }
 
 
 }

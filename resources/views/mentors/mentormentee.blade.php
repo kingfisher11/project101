@@ -36,26 +36,30 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th> No Matrik </th>
-                                    <th> Mentee Name </th>
-                                    <th> Program</th>
+                                    <th> No </th>
+                                    <th> MATRIX NUMBER </th>
+                                    <th> MENTEE NAME </th>
+                                    <th> PROGRAM</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach ($mentors as $getStudent)
+                            
+                            @foreach ($mentors as $no => $mentor)
                                
                                 <tr>
-                                    <td>{{ $getStudent ->RKD01_Nomatrik }}</td> 
-                                    <td>{{ $getStudent ->RKD01_Nama}}</td>
-                                    <td>{{ $getStudent ->RKD01_Program }}</td>
+                                <td>{{ ++$no }}</td> 
+                                    <td>{{ $mentor->student->RKD01_Nomatrik }}</td> 
+                                    <td>{{ $mentor->student->RKD01_Nama }}</td> 
+                                    <td>{{ $mentor->student->RKD01_Program }}</td> 
+
+
                                 </tr>
 
                             @endforeach
                             </tbody>
                         </table>
-                        {{ $mentors->links() }}
-
+                        
                     </div>
                 </div>
                 

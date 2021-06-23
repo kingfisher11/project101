@@ -22,7 +22,7 @@ class StudentController extends Controller
             // ->select(DB::raw('count(*) as student_count, StatusPL_Kod'))
             // ->where('StatusPL_Kod', '=', '01')
             // ->get();
-            $students = \App\Models\Student::paginate();
+            $students = Student::paginate();
            // dd($trainings);  //cara debug dump & die
            return view('students.index', compact('students'));
            //recources/views/cars/index.blade.php

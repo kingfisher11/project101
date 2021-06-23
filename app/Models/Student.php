@@ -19,11 +19,11 @@ class Student extends Model
     //     return $this->hasMany(StudentSemester::class, 'RKD01_Nomatrik','RKD01_Nomatrik');
     // }
     // relationship with table mentor - 1 mentor belongs to many mentee
-    public function mentor()
-    {
-        return $this->belongsTo(Mentor::class);
-        // note: we can also inlcude Mobile model like: 'App\Mobile'
-    }
+    // public function mentor()
+    // {
+    //     return $this->belongsTo(Mentor::class);
+    //     // note: we can also inlcude Mobile model like: 'App\Mobile'
+    // }
 
     // public function mentorPL()
     // {
@@ -33,7 +33,13 @@ class Student extends Model
 
     public function mentorPL()
     {
-        return $this->belongsTo(MentorPL::class, 'RKD01_Nomatrik','RKD01_Nomatrik');
+        return $this->hasOne(MentorPL::class, 'RKD01_Nomatrik');
+        // note: we can also inlcude Mobile model like: 'App\Mobile'
+    }
+
+    public function semPL()
+    {
+        return $this->hasMany(StudentSemester::class, 'RKD01_Nomatrik');
         // note: we can also inlcude Mobile model like: 'App\Mobile'
     }
 
